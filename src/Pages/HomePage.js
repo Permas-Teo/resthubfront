@@ -23,14 +23,14 @@ const HomePage = () => {
   const [toggle, setToggle] = useState(0);
 
   function getErrorFindContact(myData) {
-    if (myData.topName == "") {
+    if (myData.topName === "") {
       return "Cannot be empty";
     }
     return "";
   }
   
   function getErrorPostContact(myData) {
-    if (myData.botName == "") {
+    if (myData.botName === "") {
       return "Name Field cannot be empty.";
     } 
     return "";
@@ -41,7 +41,7 @@ const HomePage = () => {
       <div className="container fixed-bg-3 text-center">
       <h1 className="text-center pb-4 pt-5">{message}</h1> {/*{contact["message"]} */}
 
-      {(toggle == 1) ? (
+      {(toggle === 1) ? (
       <div className="fixed-bg-question">
           <h3>Name: {name}</h3>
           <h3>Email: {email}</h3>
@@ -146,7 +146,7 @@ const HomePage = () => {
         })
           .then((response) => response.json())
           .then((result) => {
-            if (result.name == "MongoError") {
+            if (result.name === "MongoError") {
               setMessage("Failed to add contact: Duplicate Name");  
               return;
             }
@@ -183,7 +183,7 @@ const HomePage = () => {
           .then((response) => response.json())
           .then((result) => {
             console.log(result);
-            if (result.name == "MongoError") {
+            if (result.name === "MongoError") {
               setMessage("Failed to add contact: Duplicate Name");  
               return;
             }
@@ -224,7 +224,7 @@ const HomePage = () => {
             name="topName"
             type="text"
             onChange={handleChange}
-            placeholder="Contact Name (to find/delete contact by name)"
+            placeholder="Contact Name (to find/delete by name)"
             value={myData.topName}
           />
           <p className="error-message">{error}</p>
