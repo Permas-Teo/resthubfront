@@ -258,21 +258,22 @@ const HomePage = () => {
           <br/>
           <input
             className="input-top"
-            name="botGender"
-            type="text"
-            onChange={handleChange}
-            placeholder="Gender"
-            value={myData.botGender}
-          />
-          <br/>
-          <input
-            className="input-top"
             name="botEmail"
             type="text"
             onChange={handleChange}
             placeholder="Email"
             value={myData.botEmail}
           />
+          <br/>
+          <input
+            className="input-top"
+            name="botGender"
+            type="text"
+            onChange={handleChange}
+            placeholder="Gender"
+            value={myData.botGender}
+          />
+
           <br/>
           <input
             className="input-top mb-5"
